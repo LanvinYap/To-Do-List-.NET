@@ -25,7 +25,8 @@ namespace ToDoApp.Pages
         public async Task<IActionResult> OnPostAsync(
             string title,
             string description,
-            DateTime dueDate
+            DateTime dueDate,
+            string category
         )
         {
             var task = new TaskItem
@@ -33,7 +34,8 @@ namespace ToDoApp.Pages
                 Title = title,
                 Description = description,
                 DueDate = dueDate,
-                IsCompleted = false
+                IsCompleted = false,
+                Category = category
             };
 
             _context.Tasks.Add(task);
